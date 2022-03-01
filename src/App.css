@@ -5,14 +5,10 @@
   text-shadow: 1px 1px 1px rgb(0, 0, 0, 0.5);
   justify-content: center;
   margin: auto;
-
-  @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
-    max-: 375px;
-  }
 }
 
 .app {
-  background-position: bottom;
+  background-position: top;
   background-size: cover;
   text-align: center;
   transition: 1s;
@@ -35,6 +31,11 @@
 }
 
 .app.fog {
+  background-image: url("../public/mist.jpeg");
+  transition: 1s;
+}
+
+.app.haze {
   background-image: url("../public/mist.jpeg");
   transition: 1s;
 }
@@ -71,7 +72,6 @@ main {
     rgba(0, 0, 0, 0.07),
     rgba(0, 0, 0, 0.25)
   );
-  justify-content: center;
 }
 
 .search-bar {
@@ -79,7 +79,7 @@ main {
   letter-spacing: 1.3px;
   border-radius: 40px;
   width: 85%;
-  height: 44px;
+  height: 45px;
   text-align: center;
   margin-top: 30px;
   border: none;
@@ -96,7 +96,7 @@ main {
   width: 75%;
   height: 45px;
   text-align: center;
-  margin-top: 35px;
+  margin-top: 30px;
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
   border: none;
   font-size: 25px;
@@ -111,29 +111,29 @@ main {
   width: 75%;
   height: 45px;
   text-align: center;
-  margin-top: 35px;
+  margin-top: 30px;
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
   border: none;
   font-size: 25px;
   text-shadow: none;
   transition: 0.25s;
-  transition-delay: height 0.2s, width 0s;
 }
 
 .search-box:hover ~ .all-data {
   border-radius: 30px;
-  width: 400px;
+  width: 60%;
   height: 320px;
-  margin-top: 90px;
-  transition: 0.5s;
-  transition-delay: 0.1s;
+  margin-top: 100px;
+  transition: 0.35s;
+  transition-delay: 0.2s;
 }
 
 .search-box:focus ~ .all-data {
   border-radius: 30px;
-  width: 400px;
+  width: 60%;
   height: 320px;
   margin-top: 80px;
+  transition-delay: 0.2s;
 }
 
 .city {
@@ -146,7 +146,6 @@ main {
 .country {
   font-size: 20px;
   color: white;
-  margin-top: -5px;
   font-family: "Marcellus";
 }
 
@@ -174,12 +173,23 @@ main {
 }
 
 .all-data {
-  border-radius: 30px;
-  width: 400px;
+  width: 60%;
   height: 320px;
   margin-top: 80px;
-  transition: 0.5s;
-  margin-right: auto;
-  margin-left: auto;
-  margin-bottom: auto;
+  transition: 0.35s;
+  transition-delay: 0.2s;
+}
+
+@media screen and (max-width: 400px) {
+  .temp {
+    font-size: 100px;
+  }
+
+  .country {
+    font-size: 18px;
+  }
+
+  .city {
+    font-size: 50px;
+  }
 }
